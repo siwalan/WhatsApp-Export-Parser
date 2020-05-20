@@ -14,7 +14,7 @@ line_by_line = [x.strip() for x in data.split('\n')]
 column_names = ["Date", "Hour", "User","Message", "File"]
 message_df = pd.DataFrame(columns = column_names)
 
-for x in result[2:]:
+for x in line_by_line[2:]:
     pattern = r'(((([0-9]|[0-9]{2})\/([0-9]|[0-9]{2})\/([0-9]{2}|[0-9]{4})), ([0-9]{2}:[0-9]{2}) (-) )(.*?):(.*?)$)'
     message = x
     regex_list = re.findall(pattern,x)
